@@ -10,15 +10,15 @@ license-file:        LICENSE
 author:              Ricky Elrod
 maintainer:          ricky@elrod.me
 copyright:           2013 - Ricky Elrod
-category:            Data
+category:            Eval.so
 build-type:          Simple
 cabal-version:       >=1.10
 
 library
   exposed-modules:
-    Data.Cruncher.FinalResult
-    Data.Cruncher.Result
-    Data.Cruncher.Request
+    Evalso.Cruncher.FinalResult
+    Evalso.Cruncher.Result
+    Evalso.Cruncher.Request
 
   ghc-options: -Wall -O2
   hs-source-dirs: src

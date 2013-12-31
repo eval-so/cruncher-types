@@ -7,9 +7,9 @@
 -- final result of a sandbox run, including compilation, execution, and output
 -- files (which are base64-encoded).
 
-module Data.Cruncher.FinalResult (FinalResult (..)) where
+module Evalso.Cruncher.FinalResult (FinalResult (..)) where
 
-import Data.Cruncher.Result
+import Evalso.Cruncher.Result
 
 import Control.Applicative
 import Control.Monad (mzero)

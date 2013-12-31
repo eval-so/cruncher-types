@@ -7,7 +7,7 @@
 -- For example, the compile step will produce a 'Result', which is defined in
 -- this module. The execution/evaluation step will also produce a 'Result'.
 
-module Data.Cruncher.Result (Result (..)) where
+module Evalso.Cruncher.Result (Result (..)) where
 
 import Control.Applicative
 import Control.Monad (mzero)

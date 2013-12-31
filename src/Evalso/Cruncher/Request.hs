@@ -6,7 +6,7 @@
 -- Handles incoming requests (usually from our Yesod frontend, but could be
 -- from anywhere).
 
-module Data.Cruncher.Request (Request (..)) where
+module Evalso.Cruncher.Request (Request (..)) where
 
 import Control.Applicative
 import Control.Monad (mzero)
