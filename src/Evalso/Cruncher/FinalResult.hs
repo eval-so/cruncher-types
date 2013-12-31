@@ -9,11 +9,11 @@
 
 module Evalso.Cruncher.FinalResult (FinalResult (..)) where
 
-import Evalso.Cruncher.Result
+import Evalso.Cruncher.SandboxResult
 
 import Control.Applicative
 import Control.Monad (mzero)
-import Data.Aeson hiding (Result)
+import Data.Aeson
 import Data.ByteString (ByteString)
 import Data.Map (Map)
 
@@ -27,8 +27,8 @@ import Data.Map (Map)
 data FinalResult
   = FinalResult
     {
-      compile     :: Maybe Result -- ^ The compilation result, if any
-    , run         :: Maybe Result -- ^ The execution result, if any
+      compile     :: Maybe SandboxResult -- ^ The compilation result, if any
+    , run         :: Maybe SandboxResult -- ^ The execution result, if any
     , outputFiles :: Map String ByteString -- ^ Base64-encoded output files
     }
   | NoSuchLanguage

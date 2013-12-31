@@ -17,7 +17,7 @@ cabal-version:       >=1.18
 library
   exposed-modules:
     Evalso.Cruncher.FinalResult
-    Evalso.Cruncher.Result
+    Evalso.Cruncher.SandboxResult
     Evalso.Cruncher.Request
 
   ghc-options: -Wall -O2
