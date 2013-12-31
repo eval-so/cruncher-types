@@ -12,7 +12,7 @@ maintainer:          ricky@elrod.me
 copyright:           2013 - Ricky Elrod
 category:            Eval.so
 build-type:          Simple
-cabal-version:       >=1.10
+cabal-version:       >=1.18
 
 library
   exposed-modules:
