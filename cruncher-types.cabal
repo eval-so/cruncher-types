@@ -1,0 +1,39 @@
+name:                cruncher-types
+version:             1.0.0
+synopsis:            Request and Response types for Eval.so's Cruncher library
+description:         You are not likely to find this useful unless you are building a library for accessing Eval.so's new API.
+homepage:            http://github.com/eval-so/cruncher-types
+license:             BSD3
+license-file:        LICENSE
+author:              Ricky Elrod
+maintainer:          ricky@elrod.me
+copyright:           2013 - Ricky Elrod
+category:            Data
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:
+    Data.Cruncher.FinalResult
+    Data.Cruncher.Result
+    Data.Cruncher.Request
+
+  ghc-options: -Wall -Werror -threaded
+  hs-source-dirs: src
+  default-language:    Haskell2010
+
+  build-depends:
+      base ==4.6.*
+    , bytestring ==0.10.*
+    , containers ==0.5.*
+    , text ==0.11.*
+    , aeson ==0.6.*
+
+test-suite hlint
+  hs-source-dirs: tests
+  main-is: hlint.hs
+  type: exitcode-stdio-1.0
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , hlint >= 1.7
