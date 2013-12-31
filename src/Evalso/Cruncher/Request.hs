@@ -10,12 +10,12 @@ module Evalso.Cruncher.Request (Request (..)) where
 
 import Control.Applicative
 import Control.Monad (mzero)
-import Data.Aeson hiding (Result)
+import Data.Aeson
 import qualified Data.ByteString.Char8 as C8
 import qualified Data.Text as T
 
 -- | Describes an incoming request to the system. Proper use of this will
---   normally lead to some kind of a 'IO' 'Result'.
+--   normally lead to some kind of a 'IO' 'SandboxResult'.
 data Request = Request {
     language    :: String
   , code        :: T.Text

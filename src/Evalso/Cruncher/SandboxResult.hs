@@ -12,7 +12,7 @@ module Evalso.Cruncher.SandboxResult (SandboxResult (..)) where
 
 import Control.Applicative
 import Control.Monad (mzero)
-import Data.Aeson hiding (Result)
+import Data.Aeson
 import Data.Text (Text)
 
 -- | Describes the result we get back after performing an evaluation (or

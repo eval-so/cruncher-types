@@ -19,9 +19,9 @@ import Data.Map (Map)
 
 -- | The final result for a given request.
 --
---   This contains the 'Result' obtained from both evaluation and compilation
---   as well as any files which resulted from performing the above steps.
---   Such files should placed in @~/output/@ of the evaluation.
+--   This contains the 'SandboxResult' obtained from both evaluation and
+--   compilation as well as any files which resulted from performing the
+--   above steps. Such files should placed in @~/output/@ of the evaluation.
 --
 --   This data type also handles error handling, in the form of types.
 data FinalResult
