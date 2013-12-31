@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, Trustworthy #-}
 -- |
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
--- Stability   : probably somewhat stable
+-- Stability   : stable
 --
 -- Handles incoming requests (usually from our Yesod frontend, but could be
 -- from anywhere).
