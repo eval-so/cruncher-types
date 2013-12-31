@@ -13,24 +13,28 @@ module Evalso.Cruncher.SandboxResult (SandboxResult (..)) where
 import Control.Applicative
 import Control.Monad (mzero)
 import Data.Aeson
+import Data.ByteString (ByteString)
+import Data.Map (Map)
 import Data.Text (Text)
 
 -- | Describes the result we get back after performing an evaluation (or
 --   compilation). This is almost always wrapped in 'IO'.
 data SandboxResult = SandboxResult {
-    stdout   :: Text
-  , stderr   :: Text
-  , wallTime :: Int
-  , exitCode :: Int
+    stdout      :: Text -- ^ Standard output stream
+  , stderr      :: Text -- ^ Standard error stream
+  , wallTime    :: Int -- ^ How long the process took
+  , exitCode    :: Int -- ^ The exit code returned by the process
+  , outputFiles :: Map String ByteString  -- ^ Base64-encoded output files
 } deriving (Eq, Show)
 
 instance ToJSON SandboxResult where
-  toJSON (SandboxResult stdout' stderr' wallTime' exitCode') = object
+  toJSON (SandboxResult stdout' stderr' wallTime' exitCode' outputFiles') = object
     [
       "stdout"   .= stdout'
     , "stderr"   .= stderr'
     , "wallTime" .= wallTime'
     , "exitCode" .= exitCode'
+    , "outputFiles" .= outputFiles'
     ]
 
 instance FromJSON SandboxResult where
@@ -39,4 +43,5 @@ instance FromJSON SandboxResult where
                          <*> v .: "stderr"
                          <*> v .: "wallTime"
                          <*> v .: "exitCode"
+                         <*> v .: "outputFiles"
   parseJSON _          = mzero
