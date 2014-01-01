@@ -45,9 +45,3 @@ instance ToJSON FinalResult where
     where
       selinuxError :: String
       selinuxError = "Internal security error - halting request"
-
-instance FromJSON FinalResult where
-  parseJSON (Object v) = FinalResult <$>
-                             v .: "compile"
-                         <*> v .: "run"
-  parseJSON _          = mzero
