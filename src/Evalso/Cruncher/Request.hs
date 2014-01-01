@@ -11,7 +11,8 @@ module Evalso.Cruncher.Request (Request (..)) where
 import Control.Applicative
 import Control.Monad (mzero)
 import Data.Aeson
-import qualified Data.ByteString.Char8 as C8
+import Data.ByteString (ByteString)
+import Data.Map (Map)
 import qualified Data.Text as T
 
 -- | Describes an incoming request to the system. Proper use of this will
@@ -19,7 +20,7 @@ import qualified Data.Text as T
 data Request = Request {
     language    :: String
   , code        :: T.Text
-  , files       :: Maybe [(String, C8.ByteString)]
+  , inputFiles  :: Maybe (Map String ByteString)
   , compileOnly :: Bool
   , stdin       :: Maybe T.Text
 } deriving (Eq, Show)
