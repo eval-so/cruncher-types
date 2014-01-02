@@ -9,7 +9,7 @@ license:             BSD3
 license-file:        LICENSE
 author:              Ricky Elrod
 maintainer:          ricky@elrod.me
-copyright:           2013 - Ricky Elrod
+copyright:           2014 - Ricky Elrod
 category:            Eval.so
 build-type:          Simple
 cabal-version:       >=1.18
