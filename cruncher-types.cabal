@@ -1,5 +1,5 @@
 name:                cruncher-types
-version:             1.0.2
+version:             1.0.3
 synopsis:            Request and Response types for Eval.so's API
 description:
   You are not likely to find this useful unless you are building a library for
