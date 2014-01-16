@@ -10,8 +10,6 @@ module Evalso.Cruncher.FinalResult (FinalResult (..)) where
 
 import Evalso.Cruncher.SandboxResult
 
-import Control.Applicative
-import Control.Monad (mzero)
 import Data.Aeson
 
 -- | The final result for a given request.
