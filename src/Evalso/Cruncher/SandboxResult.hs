@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, Trustworthy #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell, Trustworthy #-}
 -- |
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : stable
@@ -11,6 +11,7 @@
 module Evalso.Cruncher.SandboxResult (SandboxResult (..)) where
 
 import Control.Applicative
+import Control.Lens hiding ((.=))
 import Control.Monad (mzero)
 import Data.Aeson
 import Data.ByteString (ByteString)
@@ -26,6 +27,8 @@ data SandboxResult = SandboxResult {
   , exitCode    :: Int -- ^ The exit code returned by the process
   , outputFiles :: Map String ByteString  -- ^ Base64-encoded output files
 } deriving (Eq, Show)
+
+makeLenses ''SandboxResult
 
 instance ToJSON SandboxResult where
   toJSON (SandboxResult stdout' stderr' wallTime' exitCode' outputFiles') = object

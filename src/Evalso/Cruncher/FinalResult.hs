@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, Trustworthy #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell, Trustworthy #-}
 -- |
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : stable
@@ -10,6 +10,7 @@ module Evalso.Cruncher.FinalResult (FinalResult (..)) where
 
 import Evalso.Cruncher.SandboxResult
 
+import Control.Lens hiding ((.=))
 import Data.Aeson
 
 -- | The final result for a given request.
@@ -24,6 +25,8 @@ data FinalResult
   | NoSuchLanguage
   | SELinuxNotEnforcing
   deriving (Eq, Show)
+
+makeLenses ''FinalResult
 
 instance ToJSON FinalResult where
   toJSON (FinalResult compile' run') = object

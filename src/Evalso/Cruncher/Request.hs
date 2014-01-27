@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, Trustworthy #-}
+{-# LANGUAGE OverloadedStrings, TemplateHaskell, Trustworthy #-}
 -- |
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : stable
@@ -9,6 +9,7 @@
 module Evalso.Cruncher.Request (Request (..)) where
 
 import Control.Applicative
+import Control.Lens
 import Control.Monad (mzero)
 import Data.Aeson
 import Data.ByteString (ByteString)
@@ -24,6 +25,8 @@ data Request = Request {
   , compileOnly :: Bool
   , stdin       :: Maybe T.Text
 } deriving (Eq, Show)
+
+makeLenses ''Request
 
 instance FromJSON Request where
   parseJSON (Object v) = Request <$>
