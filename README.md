@@ -1,6 +1,7 @@
 # cruncher-types
 
 [![Build Status](https://travis-ci.org/eval-so/cruncher-types.png)](https://travis-ci.org/eval-so/cruncher-types)
+[![Hackage](http://img.shields.io/hackage/v/cruncher-types.png)](http://hackage.haskell.org/package/cruncher-types)
 
 This provides the `Request`, `Result`, and `FinalResult` types that Cruncher
 depends on.
