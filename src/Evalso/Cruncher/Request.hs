@@ -20,7 +20,7 @@ import qualified Data.Text as T
 data Request = Request {
     language    :: String
   , code        :: T.Text
-  , inputFiles  :: Maybe (Map String Text)
+  , inputFiles  :: Maybe (Map String T.Text)
   , compileOnly :: Bool
   , stdin       :: Maybe T.Text
 } deriving (Eq, Show)
