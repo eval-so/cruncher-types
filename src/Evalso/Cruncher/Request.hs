@@ -12,7 +12,6 @@ import Control.Applicative
 import Control.Lens
 import Control.Monad (mzero)
 import Data.Aeson
-import Data.ByteString (ByteString)
 import Data.Map (Map)
 import qualified Data.Text as T
 
@@ -21,7 +20,7 @@ import qualified Data.Text as T
 data Request = Request {
     language    :: String
   , code        :: T.Text
-  , inputFiles  :: Maybe (Map String ByteString)
+  , inputFiles  :: Maybe (Map String Text)
   , compileOnly :: Bool
   , stdin       :: Maybe T.Text
 } deriving (Eq, Show)

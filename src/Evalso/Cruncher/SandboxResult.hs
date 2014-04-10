@@ -14,7 +14,6 @@ import Control.Applicative
 import Control.Lens hiding ((.=))
 import Control.Monad (mzero)
 import Data.Aeson
-import Data.ByteString (ByteString)
 import Data.Map (Map)
 import Data.Text (Text)
 
@@ -25,7 +24,7 @@ data SandboxResult = SandboxResult {
   , stderr      :: Text -- ^ Standard error stream
   , wallTime    :: Int -- ^ How long the process took
   , exitCode    :: Int -- ^ The exit code returned by the process
-  , outputFiles :: Map String ByteString  -- ^ Base64-encoded output files
+  , outputFiles :: Map String Text -- ^ Base64-encoded output files
 } deriving (Eq, Show)
 
 makeLenses ''SandboxResult
