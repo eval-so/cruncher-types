@@ -1,4 +1,6 @@
-{-# LANGUAGE OverloadedStrings, Trustworthy #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE Trustworthy #-}
 -- |
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : experimental
