@@ -3,7 +3,7 @@
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : stable
 --
--- Handles incoming requests (usually from our Yesod frontend, but could be
+-- Handles incoming requests (usually from our web frontend, but could be
 -- from anywhere).
 
 module Evalso.Cruncher.Request (Request (..)) where
