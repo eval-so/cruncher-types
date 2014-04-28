@@ -5,7 +5,7 @@
 -- Maintainer  : Ricky Elrod <ricky@elrod.me>
 -- Stability   : experimental
 
-module Evalso.Cruncher.Language (Language (..)) where
+module Evalso.Cruncher.Language where
 
 import Control.Lens hiding ((.=))
 import Data.Aeson
@@ -13,14 +13,14 @@ import qualified Data.Text as T
 
 -- | Describes what a programming language looks like internally.
 data Language = Language {
-    codeFilename :: String -- ^ What to store the incoming file as.
-  , compileCommand :: Maybe [T.Text] -- ^ What to compile with.
-  , compileTimeout :: Maybe Int -- ^ How many seconds to give the compilation before timeout.
-  , runCommand :: [T.Text] -- ^ What to run with.
-  , runTimeout :: Int -- ^ How many seconds to give the compilation before timeout.
-  , codemirror :: String -- ^ How does this get highlighted in CodeMirror?
-  , rpm :: String -- ^ Which RPM provides this? Used for summary/version only.
-  , displayName :: String -- ^ How should this language be displayed in UIs?
+    _codeFilename :: String -- ^ What to store the incoming file as.
+  , _compileCommand :: Maybe [T.Text] -- ^ What to compile with.
+  , _compileTimeout :: Maybe Int -- ^ How many seconds to give the compilation before timeout.
+  , _runCommand :: [T.Text] -- ^ What to run with.
+  , _runTimeout :: Int -- ^ How many seconds to give the compilation before timeout.
+  , _codemirror :: String -- ^ How does this get highlighted in CodeMirror?
+  , _rpm :: String -- ^ Which RPM provides this? Used for summary/version only.
+  , _displayName :: String -- ^ How should this language be displayed in UIs?
 } deriving (Eq, Show)
 
 makeLenses ''Language
